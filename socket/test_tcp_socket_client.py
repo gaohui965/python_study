@@ -2,7 +2,7 @@
 
 from socket import *
 
-HOST = 'localhost'
+HOST = '127.0.0.1'
 PORT = 8899
 BUFSIZE = 1024
 ADDR = (HOST, PORT)
@@ -22,7 +22,7 @@ while True:
     recv_message_data = tcp_client_sock.recv(BUFSIZE)
     if not recv_message_data:
         break
-    print data.strip()
+    print recv_message_data.strip()
 
     # Close tcp socket.
     tcp_client_sock.close()
