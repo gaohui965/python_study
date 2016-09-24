@@ -7,6 +7,10 @@ HOST = '127.0.0.1'
 PORT = 8899
 BUFSIZE = 1024
 
+def usage():
+   print("Usage: %s [ip] [port]" %sys.argv[0])
+   exit(0)
+
 args_count = len(sys.argv) - 1
 if args_count == 0:
     server_host = HOST
@@ -19,6 +23,7 @@ elif args_count == 2:
     server_port = int(sys.argv[2])
 else:
     print("Too must arguments!")
+    usage()
     exit(1)
 
 server_addr = (server_host, server_port)
